@@ -3,7 +3,7 @@ import React from 'react'
 
 const ImageWrapper = ({source, width, height}) => {
   return (
-    <div className={`relative w-[${width}px] h-[${height}px]`}>
+    <div className={`relative w-[${width}] h-[${height}]`}>
       <Image 
         src={source}
         className='w-full h-full'
