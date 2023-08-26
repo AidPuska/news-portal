@@ -1,16 +1,19 @@
 "use client"
+import { data } from '@/pages/Main'
 import Image from 'next/image'
-import React from 'react'
+import React, { useState } from 'react'
 
 const Header = () => {
 
+  const [dataNum, setDataNum] = useState(0)
+
   return (
     <div>
-      <div className='relative bg-red-500 
-        flex flex-col items-center'>
+      <div className='relative flex flex-col 
+      items-center w-[400px] md:w-full mx-auto h-[400px]'>
         <Image
-          src={require('../../public/velika-sala.png')}
-          className='w-full h-[500px] md:h-full object-cover'
+          src={data[dataNum].image}
+          className='w-[400px] md:w-full h-[500px] md:h-full object-cover'
           alt='main_image'
           quality={100}
         />
@@ -19,18 +22,20 @@ const Header = () => {
           className='w-12 h-12 absolute top-1/2 left-2 md:left-20 hover:scale-95'
           alt='left arrow'
           quality={100}
+          onClick={() => setDataNum(prev => prev - 1)}
         />
         <Image 
           src={require('../../public/arrow-right.png')}
           className='w-12 h-12 absolute top-1/2 right-2 md:right-20 hover:scale-95'
           alt='right arrow'
           quality={100}
+          onClick={() => setDataNum(prev => prev + 1)}
         />
         <div className='absolute w-52 md:w-fit 
           bottom-5 items-center flex flex-col'>
           <p className='text-lg text-justify drop-shadow-xl 
           md:text-3xl font-bold text-white'>
-            Ustavni sud Bosne i Hercegovine odlučio o spornom slučaju...
+            {data[dataNum].title}
           </p>
           <p className='text-[12px] underline 
           decoration-white text-white hover:scale-105'>
