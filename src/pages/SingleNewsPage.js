@@ -17,7 +17,8 @@ const SingleNewsPage = () => {
           src={data[0].image}
         />
 
-        <div className='px-20'>
+        <div className='px-20 mb-10 flex flex-col'>
+
           <h1 className='text-[20px] font-bold'>{data[0].title}</h1>
 
           <div className='flex justify-between text-[13px] mb-10'>
@@ -31,7 +32,19 @@ const SingleNewsPage = () => {
             </div>
           </div>
 
-          <h3 className='text-justify text-[13px] first-letter:text-3xl'>{text}</h3>
+          <h3 className='text-justify text-[13px] first-letter:text-3xl mb-10'>{text}</h3>
+
+          <div className='mb-10'>
+            <h1>Comments: </h1>
+            <input
+              className='border border-black h-20 w-full rounded-md'
+            />
+          </div>
+
+          <div>
+            <h1>More like this: </h1>
+            
+          </div>
         </div>
       </div>
     </div>
