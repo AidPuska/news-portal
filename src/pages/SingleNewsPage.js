@@ -8,16 +8,19 @@ const text = 'Visoki predstavnik u BiH danas je u Sarajevu održao nastupnu konf
 
 const SingleNewsPage = () => {
 
+  const width = window.innerWidth;
+
   return (
     <div className='w-full h-full flex flex-col items-center'>
-      <div className='w-[800px] h-full flex flex-col gap-5'>
+      <div className={`w-[${width}px] md:w-[800px] h-full flex flex-col gap-5`}>
         <Image 
           height={400}
           width={800}
           src={data[0].image}
+          alt='Glavna slika vijesti'
         />
 
-        <div className='px-20 mb-10 flex flex-col'>
+        <div className='px-5 md:px-20 mb-10 flex flex-col'>
 
           <h1 className='text-[20px] font-bold'>{data[0].title}</h1>
 
