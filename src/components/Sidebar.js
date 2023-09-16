@@ -4,7 +4,7 @@ import React from 'react'
 const Sidebar = () => {
   return (
     <div className='flex flex-col gap-5 p-5'>
-      {data.map(news => (
+      {/* {data.map(news => (
         <div>
           <p className='text-[14px]'>{news.desc.slice(0,150)}</p>
           <div className='flex items-center gap-2'>
@@ -13,7 +13,7 @@ const Sidebar = () => {
             <p className='text-[14px]'>2m ago</p>
           </div>
         </div>
-      ))}
+      ))} */}
     </div>
   )
 }

@@ -1,4 +1,12 @@
-"use client"
+export async function getServerSideProps() {
+  const res = await fetch("http://localhost:4000/news", {
+    next: {
+      revalidate: 1
+    }
+  })
+
+  return res.json();
+}
 
 import Header from '@/components/Header'
 import ImageWrapper from '@/components/ImageWrapper'
@@ -6,7 +14,7 @@ import Navbar from '@/components/Navbar'
 import Sidebar from '@/components/Sidebar'
 import SingleNews from '@/components/SingleNews'
 import Image from 'next/image'
-import React, { useEffect } from 'react'
+import React from 'react'
 import { beforeData } from '../../assets/data'
 
 const orderOfGrid = ['big', 'middle', 'middle', 'middle', 'middle', 'big', 'big', 'middle', 'middle', 'big']
@@ -16,19 +24,22 @@ const getCardSize = (id) => {
   else if (id > 9) return id % 10;
 }
 
-export const data = beforeData.map(item => (
-  {...item, size: orderOfGrid[getCardSize(item.id)]}
-))
+const Main = async () => {
 
-const Main = () => {
+  let beforeData = await getServerSideProps()
 
-  let width = window.innerWidth;
+  const data = beforeData.map(item => (
+    {...item, size: orderOfGrid[getCardSize(item.id)]}
+  ))
+
+  console.log(data)
+
 
   return (
     <div className='mx-0 md:mx-20'>
-      <Header />
+      <Header data={data} />
       <Navbar />
-      <div className={`flex w-[${width}px] md:w-full mx-auto justify-around gap-5 p-5`}>
+      <div className={`flex w-[${400}px] md:w-full mx-auto justify-around gap-5 p-5`}>
 
         <div className='bg-grey-400 hidden md:flex w-[300px] border border-black bg-[#F0F0F0]'>
           <Sidebar />
