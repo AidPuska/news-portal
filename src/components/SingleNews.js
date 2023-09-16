@@ -14,7 +14,7 @@ const SingleNews = ({size, news}) => {
   return (
     <Link 
       href={{
-        pathname: "/vijesti",
+        pathname: `vijesti/${news.id}`,
       }}
       className={size === 'big' && 'col-span-2 h-[350px] flex' || size === 'middle' && 'col-span-1 h-[350px] border-b border-black' || size === 'small' && 'col-span-1 h-[170px] flex'}
     >

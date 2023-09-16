@@ -2,10 +2,10 @@ import React from 'react'
 
 const Navbar = () => {
 
-  const width = window.innerWidth;
+  //const width = window.innerWidth;
 
   return (
-    <div className={`w-[${width}px] md:w-[1160px] px-5 md:px-0 flex mx-auto mt-5`}>
+    <div className={`w-[${400}px] md:w-[1160px] px-5 md:px-0 flex mx-auto mt-5`}>
       <div className='hidden md:flex justify-center p-5 gap-24 
       text-black font-semibold border-b-2 border-black text-[14px]'>
         <h2 className='mr-[170px]'>Najnovije</h2>
