@@ -19,17 +19,16 @@ const SingleNewsPage = ({singleNews}) => {
         <Image 
           height={400}
           width={800}
-          src={singleNews.image && singleNews.image}
+          src={singleNews?.image}
           alt='Glavna slika vijesti'
-          fill
         />
 
         <div className='px-5 md:px-20 mb-10 flex flex-col'>
 
-          <h1 className='text-[20px] font-bold'>{singleNews.title}</h1>
+          <h1 className='text-[20px] font-bold'>{singleNews?.title}</h1>
 
           <div className='flex justify-between text-[13px] mb-10'>
-            <p>Autor: {singleNews.author} - Prije 2d</p>
+            <p>Autor: {singleNews?.author} - Prije 2d</p>
             <div className='flex items-center gap-1'>
               <p>512</p>
               <Image 
