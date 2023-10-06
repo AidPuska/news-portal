@@ -32,9 +32,6 @@ const Main = async () => {
     {...item, size: orderOfGrid[getCardSize(item.id)]}
   ))
 
-  console.log(data)
-
-
   return (
     <div className='mx-0 md:mx-20'>
       <Header data={data} />
