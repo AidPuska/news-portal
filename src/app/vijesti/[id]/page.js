@@ -1,5 +1,4 @@
 import SingleNewsPage from '@/pages/SingleNewsPage'
-import Script from 'next/script';
 import React from 'react'
 
 export async function getOneNews(id) {
@@ -14,15 +13,6 @@ const page = async ({ params }) => {
 
   return (
     <div>
-      <Script
-        id="adsbygoogle-init"
-        strategy="afterInteractive"
-        crossOrigin="anonymous"
-        src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3301497529143433"
-        onError={(e) => {
-          console.error('Script failed to load', e)
-        }}
-      />
       <SingleNewsPage singleNews={singleNews[0]} />
     </div>
   )
