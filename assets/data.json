@@ -1,5 +1,4 @@
-{
-  "news": [
+[
   {
     "id": "0",
     "title": "Schmidt: BiH neće postati",
@@ -199,5 +198,5 @@
     "size": "", 
     "category": "",
     "image": "https://www.tportal.hr/media/thumbnail/w1000/1266416.jpeg"
-  }]
-}
+  }
+]
