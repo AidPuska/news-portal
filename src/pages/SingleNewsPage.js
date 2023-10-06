@@ -20,7 +20,7 @@ const SingleNewsPage = ({singleNews}) => {
           height={400}
           width={800} 
           src={singleNews?.image}
-          alt='Glavna slika vijesti'
+          alt='Glavna slika vijesti '
         />
 
         <div className='px-5 md:px-20 mb-10 flex flex-col'>
