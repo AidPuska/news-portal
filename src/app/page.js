@@ -1,5 +1,8 @@
+"use client"
+
 import ErrorBoundary from '@/components/ErrorBoundary'
 import Main from '@/pages/Main'
+import Script from 'next/script'
 
 export default function Home() {
   return (
@@ -9,7 +12,9 @@ export default function Home() {
         strategy="afterInteractive"
         crossOrigin="anonymous"
         src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3301497529143433"
-        onError={ (e) => { console.error('Script failed to load', e) }}
+        onError={(e) => {
+          console.error('Script failed to load', e)
+        }}
       />
       <ErrorBoundary>
         <Main />
