@@ -1,5 +1,5 @@
 export async function getServerSideProps() {
-  const res = await fetch("http://localhost:4000/news", {
+  const res = await fetch("https://news-backend-qf0h.onrender.com/api/allNews", {
     next: {
       revalidate: 1
     }
@@ -28,7 +28,7 @@ const Main = async () => {
 
   let beforeData = await getServerSideProps()
 
-  const data = beforeData.map(item => (
+  const data = beforeData?.map(item => (
     {...item, size: orderOfGrid[getCardSize(item.id)]}
   ))
 
@@ -44,7 +44,7 @@ const Main = async () => {
 
         <article className='w-full md:w-[70%] flex flex-col gap-2'>
           <div className='grid grid-cols-1 md:grid-cols-4 gap-2'>
-            {data.map(news => (
+            {data?.map(news => (
               <SingleNews 
                 key={news.id} 
                 size={news.size} 

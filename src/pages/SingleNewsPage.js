@@ -16,9 +16,9 @@ const SingleNewsPage = ({singleNews}) => {
   return (
     <div className='w-full h-full flex flex-col items-center'>
       <div className={`w-[${width}px] md:w-[800px] h-full flex flex-col gap-5`}>
-        <Image 
+        <Image
           height={400}
-          width={800}
+          width={800} 
           src={singleNews?.image}
           alt='Glavna slika vijesti'
         />
@@ -34,11 +34,12 @@ const SingleNewsPage = ({singleNews}) => {
               <Image 
                 objectFit='contain'
                 src={require('../../public/share.png')}
+                alt='share news'
               />
             </div>
           </div>
 
-          <h3 className='text-justify text-[13px] first-letter:text-3xl mb-10'>{text}</h3>
+          <h3 className='text-justify text-[13px] first-letter:text-3xl mb-10'>{singleNews?.desc}</h3>
 
           <div className='mb-10'>
             <h1>Comments: </h1>
