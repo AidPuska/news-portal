@@ -32,11 +32,16 @@ const Main = async () => {
     {...item, size: orderOfGrid[getCardSize(item.id)]}
   ))
 
+  let width;
+  if(typeof window !== 'undefined') {
+    width = window.innerWidth;
+  }
+
   return (
     <div className='mx-0 md:mx-20'>
       <Header data={data} />
       <Navbar />
-      <div className={`flex w-[${400}px] md:w-full mx-auto justify-around gap-5 p-5`}>
+      <div className={`flex w-[${width ? width : 0}px] md:w-full mx-auto justify-around gap-5 p-5`}>
 
         <div className='bg-grey-400 hidden md:flex w-[300px] border border-black bg-[#F0F0F0]'>
           <Sidebar />
