@@ -7,7 +7,7 @@ import Link from 'next/link'
 
 const SingleNews = ({size, news}) => {
 
-  if(window.innerWidth <= 640) {
+  if(typeof window !== 'undefined' && window.innerWidth <= 640) {
     size = 'big'
   }
 
