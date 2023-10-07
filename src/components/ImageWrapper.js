@@ -15,8 +15,8 @@ const ImageWrapper = ({source, width, height, addStyles, size}) => {
         objectFit='cover'
         alt='slika vijesti'
       />
-      <div className='h-[18px] absolute bottom-0 w-full bg-[#4D2115]' />
-      <div className='h-[18px] absolute top-0 w-full bg-[#4D2115]' />
+      <div className='h-[1px] absolute bottom-0 w-full bg-black' />
+      <div className='h-[1px] absolute top-0 w-full bg-black' />
     </div>
   )
 }

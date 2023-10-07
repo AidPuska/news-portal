@@ -1,6 +1,7 @@
 "use client"
 import { data } from '@/pages/Main'
 import Image from 'next/image'
+import Link from 'next/link'
 import React, { useState } from 'react'
 
 const Header = ({data}) => {
@@ -46,10 +47,13 @@ const Header = ({data}) => {
           md:text-3xl font-bold text-white'>
             {featuredData[dataNum].title}
           </p>
-          <p className='text-[12px] underline 
-          decoration-white text-white hover:scale-105'>
+          <Link 
+            href={`/vijesti/${featuredData[dataNum].id}`}
+            className='text-[12px] underline 
+            decoration-white text-white hover:scale-105 cursor-pointer'
+          >
             Čitaj više...
-          </p>
+          </Link>
         </div>
       </div>
     </div>
