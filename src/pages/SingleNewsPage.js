@@ -71,8 +71,6 @@ const SingleNewsPage = ({singleNews}) => {
               Dodaj komentar
             </button>
 
-            <p>{singleNews}</p>
-
             {openModal && (
               <form onSubmit={handleSubmit} className='flex flex-col p-5 gap-2'>
                 <input placeholder='ime' className='border rounded' />
