@@ -30,6 +30,8 @@ const SingleNewsPage = ({singleNews}) => {
     width = window.innerWidth;
   }
 
+  console.log('a', singleNews)
+
   const handleSubmit = (e) => {
     e.preventDefault()
     console.log(test)
@@ -84,7 +86,7 @@ const SingleNewsPage = ({singleNews}) => {
             <div
               className='h-fit w-full flex flex-col gap-2'
             >
-              {!singleNews?.comments ? (
+              {!singleNews.comments ? (
                 <p className='text-[12px] p-2 font-[300]'>Nema komentara.</p>
               )
               :
