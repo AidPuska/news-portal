@@ -86,17 +86,17 @@ const SingleNewsPage = ({singleNews}) => {
             <div
               className='h-fit w-full flex flex-col gap-2'
             >
-              {!singleNews.comments ? (
-                <p className='text-[12px] p-2 font-[300]'>Nema komentara.</p>
-              )
-              :
-              (
-                singleNews.comments.map(comment => (
+              {singleNews?.comments ? (
+                singleNews?.comments?.map(comment => (
                   <div className='flex gap-2 items-center justify-between shadow-sm shadow-black/50 p-2' key={comment.author}>
                     <p className={`text-[12px] basis-[85%] text-justify ${inter.variable}`}>{comment?.text.slice(0,300)}</p>
                     <p className='basis-[15%] text-sm bg-black text-white text-center'>{comment.author}</p>
                   </div>
                 ))
+              )
+              : 
+              (
+                <p className='text-[12px] p-2 font-[300]'>Nema komentara.</p>
               )
               }
             </div>
