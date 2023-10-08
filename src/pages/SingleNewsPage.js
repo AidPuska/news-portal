@@ -56,9 +56,11 @@ const SingleNewsPage = ({news, id}) => {
     const response = await fetch(`https://news-backend-qf0h.onrender.com/api/addComment/${id}`, {
       method: 'POST',
       body: JSON.stringify({
+        comment: {
           author: author,
           text: comment
         }
+      }
       ),
       mode: "cors",
       headers: {
@@ -66,8 +68,9 @@ const SingleNewsPage = ({news, id}) => {
       },
       redirect: 'follow'
     })
-    
-    console.log(response.json())
+
+    const res = await fetch(`https://news-backend-qf0h.onrender.com/api/news/${id}`)
+    res.json().then(res => setSingleNews(res[0]))
 
     setOpenModal(false)
   }
