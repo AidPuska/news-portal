@@ -1,8 +1,8 @@
 export async function getServerSideProps() {
   const res = await fetch("https://news-backend-qf0h.onrender.com/api/allNews", {
     next: {
-      revalidate: 1
-    }
+      revalidate: 0
+    },
   })
 
   return res.json();

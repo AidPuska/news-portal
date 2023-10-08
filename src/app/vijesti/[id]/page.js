@@ -2,7 +2,11 @@ import SingleNewsPage from '@/pages/SingleNewsPage'
 import React from 'react'
 
 export async function getOneNews(id) {
-  const res = await fetch("https://news-backend-qf0h.onrender.com/api/news/"+id)
+  const res = await fetch("https://news-backend-qf0h.onrender.com/api/news/"+id, {
+    next: {
+      revalidate: 0
+    },
+  })
   return res.json();
 }
 
