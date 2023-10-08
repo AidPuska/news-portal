@@ -6,6 +6,6 @@ const nextConfig = {
       hostname: '**',
     }]
   }
-}
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;

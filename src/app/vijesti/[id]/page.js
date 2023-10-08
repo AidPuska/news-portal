@@ -17,7 +17,7 @@ const page = async ({ params }) => {
 
   return (
     <div>
-      <SingleNewsPage singleNews={singleNews[0]} />
+      <SingleNewsPage id={id} news={singleNews[0]} />
     </div>
   )
 }
