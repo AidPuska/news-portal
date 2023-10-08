@@ -53,14 +53,21 @@ const SingleNewsPage = ({news, id}) => {
       text: comment
     }}))
     
-    const response = await fetch('https://news-backend-qf0h.onrender.com/api/addComment/'+id, {
+    const response = await fetch(`https://news-backend-qf0h.onrender.com/api/addComment/${id}`, {
       method: 'POST',
-      body: JSON.stringify({comment: {
-        author: author,
-        text: comment
-      }})
+      body: JSON.stringify({
+          author: author,
+          text: comment
+        }
+      ),
+      mode: "cors",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      redirect: 'follow'
     })
     
+    console.log(response.json())
 
     setOpenModal(false)
   }
