@@ -29,7 +29,7 @@ const SingleNews = ({size, news}) => {
 
       {size === 'big' || size === 'middle' ? <div className={size === 'big' ? 'w-[50%] h-full flex flex-col justify-between border-t border-r border-b border-black/50 p-3 bg-[#E9ECEF]' : 'h-[50%] bg-[#E9ECEF] flex flex-col justify-between border-r border-l border-black p-3'}>
         <h1 className='text-[15px] font-semibold'>{news.title}</h1>
-        <p className='text-[12px]'>{size === 'middle' ? news?.desc.slice(0, 90)+'...' : news.desc}</p>
+        <p className='text-[12px]'>{size === 'middle' ? news?.desc.slice(0, 60)+'...' : news?.desc.slice(0,300)+'...'}</p>
         <div>
           <div className='bg-black w-[80%] h-[0.5px] mb-2' />
           <p className='text-[12px]'>Author: {news?.author}</p>

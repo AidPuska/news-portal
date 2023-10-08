@@ -1,7 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ['www.tportal.hr', 'storage.radiosarajevo.ba']
+    remotePatterns: [{
+      protocol: 'https',
+      hostname: '**',
+    }]
   }
 }
 

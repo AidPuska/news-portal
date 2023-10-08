@@ -15,7 +15,6 @@ import Sidebar from '@/components/Sidebar'
 import SingleNews from '@/components/SingleNews'
 import Image from 'next/image'
 import React from 'react'
-import { beforeData } from '../../assets/data'
 
 const orderOfGrid = ['big', 'middle', 'middle', 'middle', 'middle', 'big', 'big', 'middle', 'middle', 'big']
 
