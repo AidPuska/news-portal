@@ -62,7 +62,6 @@ const SingleNewsPage = ({news, id}) => {
         }
       }
       ),
-      mode: "cors",
       headers: {
         "Content-Type": "application/json",
       },
