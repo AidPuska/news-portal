@@ -1,7 +1,7 @@
 import SingleNewsPage from '@/pages/SingleNewsPage'
 import React from 'react'
 
-export async function getOneNews(id) {
+export async function getServerSideProps(id) {
   const res = await fetch("https://news-backend-qf0h.onrender.com/api/news/"+id, {
     next: {
       revalidate: 0
@@ -13,7 +13,7 @@ export async function getOneNews(id) {
 const page = async ({ params }) => {
 
   const id = params.id
-  const singleNews = await getOneNews(id)
+  const singleNews = await getServerSideProps(id)
 
   return (
     <div>
